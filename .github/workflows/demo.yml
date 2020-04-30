@@ -10,6 +10,8 @@ jobs:
         uses: Benbentwo/is-merged-pull-request@master
         id: is-merged
         with:
+          git-user: ${{github.actor}}
+          git-token: ${{secrets.GITHUB_TOKEN}}
           dump: 'true'
 
       - name: Check if Merged

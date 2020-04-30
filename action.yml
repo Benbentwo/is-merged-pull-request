@@ -16,11 +16,12 @@ inputs:
     default: ${{github.repository}}
   git-user:
     description: 'git username to use on query'
-    required: false
-    default: ${{github.actor}}
+    required: true
+#    default: ${{github.actor}}
   git-token:
     description: 'api token to query with'
-    required: false
+    required: true
+#    default: ${{secrets.GITHUB_TOKEN}}
   dump:
     description: 'enables dump of json'
     required: false
