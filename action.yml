@@ -21,7 +21,6 @@ inputs:
   git-token:
     description: 'api token to query with'
     required: false
-    default: ${{secrets.GITHUB_TOKEN}}
   dump:
     description: 'enables dump of json'
     required: false
