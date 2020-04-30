@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-USER=$2
-TOKEN=$3
-SHA=$4
-REPO=$5
-DUMP=$6
+USER=$1
+TOKEN=$2
+SHA=$3
+REPO=$4
+DUMP=$5
 
 echo "USER: $USER"
 echo "TOKEN: $TOKEN"
