@@ -1,0 +1,46 @@
+# action.yml
+name: 'Is Merged Pull Request'
+description: 'Sets an output variable `isMerged` to true if the commit fired from a push event is from a merged pull request'
+branding:
+  icon: 'git-merge'
+  color: 'gray-dark'
+author: Benbentwo
+inputs:
+  commit-sha:
+    description: 'Sha to check'
+    required: false
+    default: ${{github.sha}}
+  git-repository:
+    description: 'Repository to check'
+    required: false
+    default: ${{github.repository}}
+  git-user:
+    description: 'git username to use on query'
+    required: false
+    default: ${{github.actor}}
+  git-token:
+    description: 'api token to query with'
+    required: false
+    default: ${{secrets.GITHUB_TOKEN}}
+  dump:
+    description: 'enables dump of json'
+    required: false
+    default: 'false'
+#  base-branch:
+#    description: "Which branch do you want to see if it merged into"
+#    required: false
+#    default: 'master' # should be done by calling actions branch filter
+outputs:
+  isMerged: # id of output
+    description: 'is the commit merged?'
+  dump:
+    description: 'json dump of the payload, requires dump enabled ("true")'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.git-usre }}
+    - ${{ inputs.git-token }}
+    - ${{ inputs.commit-sha }}
+    - ${{ inputs.git-repository }}
+    - ${{ inputs.dump }}
