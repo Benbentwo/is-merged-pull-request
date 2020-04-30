@@ -39,7 +39,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.git-usre }}
+    - ${{ inputs.git-user }}
     - ${{ inputs.git-token }}
     - ${{ inputs.commit-sha }}
     - ${{ inputs.git-repository }}
