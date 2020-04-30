@@ -4,7 +4,7 @@ on:
 jobs:
   demo-is-merged-job:
     runs-on: ubuntu-latest
-    name: A job to release the next version
+    name: Demo Merged
     steps:
       - name: Is Merged Pull Request
         uses: Benbentwo/is-merged-pull-request@master

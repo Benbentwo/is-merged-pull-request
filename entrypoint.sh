@@ -7,6 +7,12 @@ SHA=$4
 REPO=$5
 DUMP=$6
 
+echo "USER: $USER"
+echo "TOKEN: $TOKEN"
+echo "SHA: $SHA"
+echo "REPO: $REPO"
+echo "DUMP: $DUMP"
+
 HEADERS=( 'Accept:application/vnd.github.groot-preview+json' )
 command="curl"
 
