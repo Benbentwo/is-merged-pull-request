@@ -24,5 +24,6 @@ jobs:
 #        if: ${{steps.is-merged-outputs.isMerged}} == 'false'
         run: |
           echo "Dumping output of json"
-          echo ${{steps.is-merged.outputs.dump}} | jq
+          echo ${{steps.is-merged.outputs.dump}} > output.json
+          jq output.json
 
